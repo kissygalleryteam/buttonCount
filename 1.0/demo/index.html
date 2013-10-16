@@ -1,0 +1,183 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>buttonCount的demo</title>
+    <script src="http://g.tbcdn.cn/kissy/k/1.3.0/kissy-min.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="http://g.tbcdn.cn/kissy/k/1.3.0/css/dpl/base-min.css">
+	<link rel="stylesheet" href="bootstrap.css"/>
+	<link rel="stylesheet" href="index.css"/>
+	<script>
+		var S = KISSY;
+		if (S.Config.debug) {
+			var srcPath = "../../../";
+			S.config({
+				packages:[
+					{
+						name:"gallery",
+						path:srcPath,
+						charset:"utf-8",
+						ignorePackageNameInUri:true
+					}
+				]
+			});
+		}
+	</script>
+</head>
+<body>
+<div class="wrapper">
+
+	<div class="navbar navbar-fixed-top">
+	  <div class="navbar-inner ">
+		<div class="container">
+		  <h1 class="pull-left">buttonCount的demo</h1>
+		  <a class="btn btn-primary btn-large pull-right buttonCount-demo" href="https://github.com/kissygalleryteam/buttonCount/">
+		  了解更多
+			</a>
+		</div>
+	  </div>
+	</div>
+	<div class="container buttonCount-demo">
+		<div id="demo1">
+			<h2>demo1:</h2>
+			<p>支付宝修改邮箱，免费获取验证码。</p>
+			<div class="demo2-container">
+				<div class="kv_item">
+					<span class="kv_label">您的邮箱</span>
+					<span id="J_email">112334345@163.com</span>
+				</div>
+				<div class="kv_item">
+					<button class="btn_graylong" type="button" id="J_btn_email_code">免费获取验证码</button>
+					<div class="msg msg-inline msg-weak hide" id="J_btn_email_code_tip" style="visibility: hidden;">
+						<div class="msg-default msg-ok">
+							<i class="msg-icon"></i>
+							<div class="msg-content">
+								验证码已发送！
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="kv_item">
+					<input type="hidden" name="email" value="8A038A678C13F14800BC613143BDAF0F75902B9F" id="J_User_Email">
+					<span class="kv_label">验证码</span>
+					<input class="i_textshort" id="J_email_code_input" name="checkCode" maxlength="6" type="text" value="" autocomplete="off">
+					<div class="msg msg-inline msg-weak hide" id="J_email_code_input_tip" style="visibility: hidden;">
+						<div class="msg-default msg-error">
+							<i class="msg-icon"></i>
+							<div class="msg-content"></div>
+						</div>
+					</div>
+				</div>
+				<div class="kv_item">
+					<button class="btn" type="submit">下一步</button>
+				</div>
+			</div>
+			<h3>console:</h3>
+			<div class="demo-console" >
+				<dl id="demo1-console">
+				</dl>
+			</div>
+			<script>
+				S.use('gallery/buttonCount/1.0/index,dom', function (S, ButtonCount,DOM) {
+					var button1 = new ButtonCount({
+						srcNode: '#J_btn_email_code',
+						countTemplate: "{count}秒后可以重新发送",
+						initialized: true,
+						count: 6,
+						hook: {
+							url: 'email.php',
+							type: 'get'
+						}
+					});
+					button1.on('click', function(e){
+						DOM.html('#demo1-console', '<dd>fire click event</dd>');
+						var ajaxHook = this.get('hook');
+						ajaxHook.data.email = DOM.val('#J_User_Email');					
+						this.set('hook', ajaxHook);
+					});
+					button1.on('success', function(e){
+						DOM.append(DOM.create('<dd>fire success event</dd>'), '#demo1-console');
+						DOM.replaceClass('#J_btn_email_code_tip', 'hide', 'show');
+						DOM.css('#J_btn_email_code_tip',{visibility:'visible'});
+					});
+					button1.on('enable', function(e){
+						DOM.append(DOM.create('<dd>fire enable event</dd>'), '#demo1-console');
+					});
+					button1.on('disabled', function(e){
+						DOM.append(DOM.create('<dd>fire disabled event</dd>'), '#demo1-console');
+					});
+					button1.on('stop', function(e){
+						DOM.append(DOM.create('<dd>fire stop event</dd>'), '#demo1-console');
+						DOM.replaceClass('#J_btn_email_code_tip',  'show', 'hide');
+						DOM.css('#J_btn_email_code_tip',{visibility:'hidden'});
+					});
+				});
+			</script>
+		</div>
+		<hr/>
+		<div id="demo2">
+			<h2>demo2:</h2>
+			<p>多个倒计时按钮，任意定义倒计时显示的节点</p>
+			<table class="demo1-table">
+				<tr>
+					<th class="demo1-donor">赠送人</th>
+					<th class="demo1-status">赠送状态</th>
+				</tr>
+				<tr>
+					<td  class="demo1-donor">cptest11</td>
+					<td class="demo1-status">
+						<span>等待接受</span>
+						<div class="sms-btn">
+							<button href="#" class="btn resend">重发短信</button>
+							<span class="stip"><span>
+						</div>
+					</td>
+				</tr>
+				<tr class="item">
+					<td  class="demo1-donor">cptest11</td>
+					<td class="demo1-status">
+						<span>等待接受</span>
+						<div class="sms-btn">
+							<button href="#" class="btn resend">重发短信</button>
+							<span class="stip"></span>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<script>
+				S.use('gallery/buttonCount/1.0/index,dom', function (S, ButtonCount,DOM) {
+					DOM.query('.resend').each(function(node) {
+						var button2 = new ButtonCount({
+							srcNode: node,
+							countTemplate: "稍等{count}秒",
+							count: 60,
+							hook: {
+								url: 'email.php',
+								type: 'get'
+							}
+						});
+						button2.on('click', function(e){
+							this.setContent('发送中...');
+						});
+						button2.on('success', function(e){
+							var Obj = e.data, trigger = this.button, tip;
+							this.tip = tip = DOM.get('.stip', DOM.parent(trigger,'.sms-btn'));
+							if(Obj.status){
+								this.setContent('发送成功');
+								DOM.css(tip, {display:'block'});
+								this.setCountNode(tip);
+							}	
+						});
+						button2.on('stop', function(e){
+							DOM.css(this.tip, {display:'none'});
+						});
+					});
+				});
+			</script>
+		</div>
+		
+		
+	</div>
+</div>
+</body>
+</html>
