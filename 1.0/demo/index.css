@@ -12,13 +12,13 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#24ABEB', endColorstr='#1691CC', GradientType=0);}
 .buttonCount-demo{ margin-top:56px;}
 .demo1-table th{ background:#e5e5e5; color:#404040; font-weight:bold; height:35px;}
-.demo1-table td{padding:5px 0 30px;color:#404040;}
+.demo1-table td{padding:5px 0 5px;color:#404040;}
 .demo1-table .demo1-donor{ width:200px;  text-align:center;}
 .demo1-table .demo1-status{ width:200px; text-align:center;}
 .demo1-table .item{ border-top:1px dashed #CCC; }
 .navbar .buttonCount-demo{ margin-top:9px;}
-.sms-btn{position:relative;margin-top:10px;}
-.sms-btn .stip{color:#aaa;display:none; margin-top:2px; width:75px; height:18px; position:absolute; bottom:-20px; left:63px;}
+.sms-btn{position:relative;margin-top:10px; height:58px;}
+.sms-btn .stip{color:#aaa;display:none; width:75px; height:18px; position:absolute; top:30px; left:63px;}
 
 .kv_item{ padding:5px 0 5px 120px;}
 .kv_label{ display:inline; float:left; width:110px; margin-left:-120px; text-align:right; line-height:26px;}
