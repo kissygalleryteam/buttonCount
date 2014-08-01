@@ -1,0 +1,32 @@
+.msg{margin-bottom:10px;}.msg .msg-default{padding:2px 5px;border:1px solid #ffcc7f;background:#ffffe5;position:relative;min-height:20px;_height:20px;overflow:hidden;overflow:visible;zoom:1;}.msg .msg-icon{float:left;width:16px;height:16px;margin:1px 5px 1px 0;font-size:0;line-height:0;background:url(http://img01.taobaocdn.com/tps/i1/T1g3uoXdpQXXXXXXXX-60-280.png) no-repeat 0 -160px;}.msg .msg-title{display:inline;padding-right:2px;font-weight:bold;}.msg .msg-content{display:inline;}.msg .msg-content.indent{display:inline;float:left;}.msg .msg-title.vm,.msg .msg-content.vm{position:relative;top:1px;}.msg .msg-error{border:1px solid #F00;background:#fff2f2;}.msg .msg-error .msg-icon{background-position:0 0;}.msg .msg-stop{border:1px solid #ff8080;background:#fff2f2;}.msg .msg-stop .msg-icon{background-position:0 -40px;}.msg .msg-question{border:1px solid #ffcc7f;background:#ffffe5;}.msg .msg-question .msg-icon{background-position:0 -80px;}.msg .msg-attention{border:1px solid #40b3ff;background:#e5f5ff;}.msg .msg-attention .msg-icon{background-position:0 -120px;}.msg .msg-tips{border:1px solid #ffcc7f;background:#ffffe5;}.msg .msg-tips .msg-icon{background-position:0 -160px;}.msg .msg-ok{border:1px solid #4dbf00;background:#f0ffe5;}.msg .msg-ok .msg-icon{background-position:0 -200px;}.msg .msg-notice{border:1px solid #ffcc7f;background:#ffffe5;}.msg .msg-notice .msg-icon{background-position:0 -240px;}.msg-strong .msg-default{padding:6px 10px;min-height:35px;_height:35px;}.msg-strong .msg-icon{width:32px;height:32px;margin-right:10px;background-position:100% -160px;left:10px;top:6px;}.msg-strong .msg-title{display:block;margin-left:42px;padding:0;font-size:14px;}.msg-strong .msg-content{display:block;margin-left:42px;}.msg-strong .msg-title.vm,.msg-strong .msg-content.vm{position:relative;top:6px;}.msg-strong .msg-error .msg-icon{background-position:100% 0;}.msg-strong .msg-stop .msg-icon{background-position:100% -40px;}.msg-strong .msg-question .msg-icon{background-position:100% -80px;}.msg-strong .msg-attention .msg-icon{background-position:100% -120px;}.msg-strong .msg-tips .msg-icon{background-position:100% -160px;}.msg-strong .msg-ok .msg-icon{background-position:100% -200px;}.msg-strong .msg-notice .msg-icon{background-position:100% -240px;}.msg-weak{margin-bottom:0;}.msg-weak .msg-default{padding:4px 6px;border:none;background:none;}.msg-weak .msg-icon{left:0;}.msg-inline,.msg-inline .msg-default{display:inline-block;*display:inline;*zoom:1;}.msg.hide{visibility:hidden!important;}.msg.show{visibility:visible!important;}
+.navbar{color:#fff; height:56px; line-height:56px;}
+.navbar-inner{ 
+  background:#24ABEB;
+  background-image: -moz-linear-gradient(top, #24ABEB, #1691CC);
+  background-image: -ms-linear-gradient(top, #24ABEB, #1691CC);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#24ABEB), to(#1691CC));
+  background-image: -webkit-linear-gradient(top, #24ABEB, #1691CC);
+  background-image: -o-linear-gradient(top, #24ABEB, #1691CC);
+  background-image: linear-gradient(top, #24ABEB, #1691CC);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#24ABEB', endColorstr='#1691CC', GradientType=0);}
+.buttonCount-demo{ margin-top:56px;}
+.demo1-table th{ background:#e5e5e5; color:#404040; font-weight:bold; height:35px;}
+.demo1-table td{padding:5px 0 5px;color:#404040;}
+.demo1-table .demo1-donor{ width:200px;  text-align:center;}
+.demo1-table .demo1-status{ width:200px; text-align:center;}
+.demo1-table .item{ border-top:1px dashed #CCC; }
+.navbar .buttonCount-demo{ margin-top:9px;}
+.sms-btn{position:relative;margin-top:10px; height:58px;}
+.sms-btn .stip{color:#aaa;display:none; width:75px; height:18px; position:absolute; top:30px; left:63px;}
+
+.kv_item{ padding:5px 0 5px 120px;}
+.kv_label{ display:inline; float:left; width:110px; margin-left:-120px; text-align:right; line-height:26px;}
+.kv_item .kv_label{ font-size:14px; vertical-align:middle;}
+
+.btn_graylong{ display:inline-block; zoom:1; font-size:12px; width:116px; height:26px; line-height:26px; text-align:center; padding:0; color:#404040; font-weight:noraml; border:none; cursor:pointer; overflow:hidden; background:url(http://img01.taobaocdn.com/tps/i1/T1EnyJXh0oXXXXXXXX-135-208.png) no-repeat 0 -130px;}
+.kv_item .msg{ vertical-align:top; font-size:12px;}
+.i_textshort{ width:75px; margin:0; padding:4px 3px; height:16px; line-height:16px; border:1px solid #c8c8c8;}
+
+.demo-console{ width:300px; height:120px; border:1px solid #ddd; background:#000; color:#fff;}
+.demo-console dl{ padding:0 5px;}
